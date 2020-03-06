@@ -1,6 +1,5 @@
 #!python3 - common_functions.py - compilation of common functions I use in my programs
 
-
 # Common Function: 01
 # get_primes() will get all prime numbers below a certain specified value and add them to the list prime_list
 def get_primes():
@@ -32,7 +31,6 @@ def is_prime(n):
 	return all(n%x for x in range(3, int(math.sqrt(n) + 1), 2))
 	
 	
-	
 # Common Function: 03
 # is_a_palindrome(n) will determine if provided 'n' is the same forward and backward
 def is_a_palindrome(n):	
@@ -46,7 +44,6 @@ def is_a_palindrome(n):
 	else:
 		print(str_n + ' is NOT a palindrome')
 
-	
 	
 # Common Function: 04
 # convert_to_binary(n) will convert 'n' from an int to binary and remove the '0b' notifier

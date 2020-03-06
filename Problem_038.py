@@ -7,7 +7,7 @@ startTime = datetime.now()
 pandigital_nums = []
 concate_nums = []
 
-for i in range (1,10000):
+for i in range (1,9999):
     pandigital_tries = []
 
     for x in range (1,10):

@@ -1,4 +1,4 @@
-# Project Euler Problem #37 - Truncatable Primes - SOLVED
+# Project Euler Problem #37 - Truncatable Primes - SOLVED - 6.0s
 
 import common_functions
 from datetime import datetime
