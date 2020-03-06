@@ -27,6 +27,8 @@ def get_primes():
 def is_prime(n):
 	import math
 	
+	if n == 1:
+		return False
 	if n == 2:
 		return True
 	if n % 2 == 0:
