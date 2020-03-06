@@ -11,17 +11,13 @@ def get_primes():
 	prime_list = []
 	
 	for num in range(c, n, 2):
-		x = 0
 		if all(num%i!=0 for i in range(2, int(math.sqrt(num))+1)):
 			
 			#print('Number: ' + str(num))
 			prime_list.append(num)
 	
 	return prime_list
-	print(prime_list)
-	
-	
-	
+
 # Common Function: 02
 # is_prime(n) will determine if provided 'n' is prime or not
 def is_prime(n):
@@ -45,7 +41,7 @@ def is_a_palindrome(n):
 	
 	if str_n[:len_n] == str_n[::-1]:
 		return True
-		print(str_n + ' is a palindrome')
+		# print(str_n + ' is a palindrome')
 		
 	else:
 		print(str_n + ' is NOT a palindrome')
