@@ -1,63 +1,80 @@
-#
-#
+# Project Euler Problem #37 - Truncatable Primes - SOLVED
 
 import common_functions
 from datetime import datetime
 startTime = datetime.now()
 
-prime_list = common_functions.get_primes()
-print(prime_list)
+truncatable_primes = []
+not_truncatable_primes = []
 
-truncated_primes_list = []
+def truncate_number(number):
+	if len(str(number)) >= 2:
+		right_num = number
+		len_rnum = len(str(right_num)) - 1
+		left_num = number
+		len_lnum = len(str(left_num))
+		primes_list = []
 
-for prime in prime_list:
-	
-	str_prime = str(prime)
-	prime_len = len(str_prime)
-	print(prime)
-	#print()
-	
-	i = 1
-	while i < prime_len:
-		print('I: ' + str(i))
-		is_val_prime = str_prime[i:]
-		is_val_prime = int(is_val_prime)
-		print('Truncated Prime: ' + str(is_val_prime))
-		is_it_true = common_functions.is_prime(is_val_prime)
+		while len_rnum > 0:
 			
-		if is_it_true is True:	
-			print('ITS TRUE!')
-	
-		i += 1
-		print()
+			right_num = str(right_num)[0:len_rnum]
+			right_num = int(right_num)
+			rnum_prime = common_functions.is_prime(right_num)
 
-	#input()	
-	
-	i = prime_len - 1	
-	while i > 0:
-		print('I: ' + str(i))
-		is_val_prime = str_prime[:i]
-		is_val_prime = int(is_val_prime)
-		print('Truncated Prime: ' + str(is_val_prime))
-		is_it_true2 = common_functions.is_prime(is_val_prime)
+			if rnum_prime == True:
+				#print("R:",str(right_num)[0:len_rnum], "is Prime")
+				primes_list.append(right_num)
+			#else:
+				#print("R:",str(right_num)[0:len_rnum], "is NOT Prime")
+
+			len_rnum -= 1
 			
-		if is_it_true2 is True:	
-			print('ITS TRUE!')
+		for y in range(1,len_lnum):
+			left_num = int(left_num)
+			new_l_num = str(left_num)[y:len_lnum]
+			new_l_num = int(new_l_num)
+			lnum_prime = common_functions.is_prime(new_l_num)
+
+			if lnum_prime == True:
+				#print("L:", str(left_num)[y:len_lnum], "is Prime")
+				primes_list.append(new_l_num)
+			#else:
+				#print("L:", str(left_num)[y:len_lnum], "is NOT Prime")
+
+		if len(str(number)) == 2:
+			if len(primes_list) == 2:
+				#print(primes_list)
+				truncatable_primes.append(number)
+		elif len(str(number)) == 3:
+			if len(primes_list) == 4:
+				#print(primes_list)
+				truncatable_primes.append(number)
+		elif len(str(number)) == 4:
+			if len(primes_list) == 6:
+				#print(primes_list)
+				truncatable_primes.append(number)
+		elif len(str(number)) == 6:
+			if len(primes_list) == 10:
+				#print(primes_list)
+				truncatable_primes.append(number)		
+
+	#else:
+		#print("Prime lengh == 1")
+
+
+for i in range (22, 739398):
+	prime_number = common_functions.is_prime(i)
+
+	if prime_number == True:
+		#print(i)
+		truncate_number(i)
+		#print()
 	
-		i -= 1
-		print()
-		
-		
-	if is_it_true is True and is_it_true2 is True:
-		print('THEY ARE BOTH TRUE!')
-		
-		truncated_primes_list.append(prime)
-		
-		
-		
-print(truncated_primes_list)
-truncated_sum = sum(truncated_primes_list)
-print('SUM: ' + str(truncated_sum))		
-		
+print(truncatable_primes)
+
+truncatable_sum = sum(truncatable_primes)
+print('# of Values:',len(truncatable_primes))
+print("Total Sum:",truncatable_sum)
+print()
 print('Duration: ')
 print(datetime.now() - startTime)
