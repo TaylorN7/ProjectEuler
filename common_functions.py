@@ -2,11 +2,11 @@
 
 # Common Function: 01
 # get_primes() will get all prime numbers below a certain specified value and add them to the list prime_list
-def get_primes():
+def get_primes(c,n):
 	import math
 	
-	c = int(input('What number should I start with?\n')) 
-	n = int(input('What number should I go to?\n')) 
+	#c = int(input('What number should I start with?\n')) 
+	#n = int(input('What number should I go to?\n')) 
 	prime_list = []
 	
 	for num in range(c, n, 2):
