@@ -1,4 +1,4 @@
-# Project Euler - Problem #46 - Goldbach's Other Conjecture
+# Project Euler - Problem #46 - Goldbach's Other Conjecture - SOLVED - 59s
 
 import common_functions
 from datetime import datetime
@@ -14,75 +14,39 @@ def composite_numbers(n):
     else:
         composite_number_list.append(n)
 
-def goldbach_composite(n):
-    for prime in primes:
-        for square in twice_squares:
-            if prime + square == n and n not in goldbach_composites:
-                #print("\ngoldbach COMPOSITE:",n)
-                #print("NUM:",n)
-                #print("PRIME:",prime)
-                #print("SQUARE:",square)
-                goldbach_composites.append(n)
-
-
 non_goldbach_composites = []
 composite_number_list = []   
 goldbach_composites = []
 twice_squares = []
 
-primes = common_functions.get_primes(3,10000)
-print(primes)
+primes = common_functions.get_primes(3,6000)
 
-for i in range(1, 1000):
+for i in range(1, 6000):
     y = twice_a_square(i)
-    twice_squares.append(i)
+    twice_squares.append(y)
 
-for i in range(1, 10000, 2):
+for i in range(1, 6000, 2):
     composite_numbers(i)
 
-#for num in composite_number_list:
-#    goldbach_composite(num)
+for num in composite_number_list:
+    #print(num)
+    for prime in primes:
+        if prime < num:
+            x = num - prime
 
-# Testing
-non_goldbach_composites.append(44)
+            if x in twice_squares:
+                if num not in goldbach_composites:
+                    goldbach_composites.append(num)
 
-final_list = [x for x in non_goldbach_composites if x not in goldbach_composites]
+for num in composite_number_list:
+    if num not in goldbach_composites:
+        non_goldbach_composites.append(num)
 
-print("\nGOLDBACH COMPOSITES:")
-print(goldbach_composites)
+if 1 in non_goldbach_composites:
+    non_goldbach_composites.remove(1)
 
-print("\nNON-GOLDBACH COMPOSITES:")
-#print(non_goldbach_composites)
-print(final_list)
-
-
-
-# new section
-for composite_number in composite_number_list:
-    if composite_number in primes:
-        pass
-    else:
-        for prime in primes:
-            if prime > composite_number:
-                pass
-            else:
-                for square in twice_squares:
-                    if square > composite_number:
-                        pass
-                    elif prime + square = composite_number:
-                        goldbach_composites.append(composite_number)
-
-
-
-
-
-
-
-
-
-
-
-
+print("NON-GOLDBACK COMPOSITES")
+print(non_goldbach_composites)
 
 
 print('\nDuration: ')
