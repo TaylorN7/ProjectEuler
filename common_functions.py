@@ -52,6 +52,10 @@ def convert_to_binary(n):
 	bin_n = bin_n[2:]
 	print(bin_n)
 	
+
+def self_power(n):
+	self_power_val = n ** n
+	return self_power_val
 	
 	
 	
