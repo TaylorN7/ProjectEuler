@@ -44,7 +44,6 @@ def is_a_palindrome(n):
 	else:
 		print(str_n + ' is NOT a palindrome')
 
-	
 # Common Function: 04
 # convert_to_binary(n) will convert 'n' from an int to binary and remove the '0b' notifier
 def convert_to_binary(n):
