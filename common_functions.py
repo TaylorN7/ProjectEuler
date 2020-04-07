@@ -10,7 +10,7 @@ def get_primes(c,n):
 	prime_list = []
 
 	# Added this IF at Problem #50 - Remove if necessary for problems before that
-	if 2 >= c or 2 <= n:
+	if 2 >= c and 2 <= n:
 		prime_list.append(2)
 	
 	for num in range(c, n, 2):
