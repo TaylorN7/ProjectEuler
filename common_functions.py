@@ -53,14 +53,21 @@ def is_a_palindrome(n):
 def convert_to_binary(n):
 	bin_n = bin(n)
 	bin_n = bin_n[2:]
-	print(bin_n)
+	#print(bin_n)
+	return bin_n
 	
 
 def self_power(n):
 	self_power_val = n ** n
 	return self_power_val
-	
-	
+
+
+def get_ascii_char_vals(string):
+    for char in string:
+        ascii_val = ord(char)
+        ascii_vals_all.append(ascii_val)
+        print("Char/Value:",char,ascii_val)	
+		#return ascii_vals_all
 	
 	
 	
