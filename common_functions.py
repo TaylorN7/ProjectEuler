@@ -63,16 +63,13 @@ def self_power(n):
 
 
 def get_ascii_char_vals(string):
+	ascii_vals_all = []
+
     for char in string:
-        ascii_val = ord(char)
-        ascii_vals_all.append(ascii_val)
-        print("Char/Value:",char,ascii_val)	
+		ascii_val = ord(char)
+		ascii_vals_all.append(ascii_val)
+		print("Char/Value:",char,ascii_val)	
 		#return ascii_vals_all
-	
-	
-	
-	
-	
 	
 	
 	
