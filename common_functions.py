@@ -61,7 +61,7 @@ def self_power(n):
 	self_power_val = n ** n
 	return self_power_val
 
-
+'''
 def get_ascii_char_vals(string):
 	ascii_vals_all = []
 
@@ -70,7 +70,7 @@ def get_ascii_char_vals(string):
 		ascii_vals_all.append(ascii_val)
 		print("Char/Value:",char,ascii_val)	
 		#return ascii_vals_all
-	
+'''	
 	
 	
 	
